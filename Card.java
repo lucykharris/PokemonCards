@@ -11,7 +11,7 @@ public class Card
     // fields
     private int id;
     private String name;
-    private String value;
+    private double value;
     private String image;
     static final String DEFAULT_IMAGE = "pokemon.png";
     int locX = 100;
@@ -22,7 +22,7 @@ public class Card
     /**
      * Constructor for objects in class Card
      */
-    public Card(int  key, String nam, String val, String img)
+    public Card(int  key, String nam, double val, String img)
     {
         // initialise instance variables
         id = key;
@@ -39,7 +39,7 @@ public class Card
      * Constructor overloading
      * Sets image to default
      */
-    public Card(int key, String nam, String val)
+    public Card(int key, String nam, double val)
     {
        this(key, nam, val, DEFAULT_IMAGE);
     }
@@ -83,7 +83,7 @@ public class Card
     /**
      * Get Value
      */
-    public String getValue(){
+    public double getValue(){
         return this.value;
     }
 }
