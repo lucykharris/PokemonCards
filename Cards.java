@@ -37,9 +37,17 @@ public class Cards
     }
     
     /**
+     * Set card Id
+     */
+    public void setCardId()
+    {
+       this.currCardId += 1;
+    }
+    
+    /**
      * Add a card to the map
      */
-    public void addCard(String name, float value, String img)
+    public void addCard(String name, double value, String img)
     {
     library.put(currCardId, new Card
     (currCardId, name, value, img));
@@ -50,7 +58,7 @@ public class Cards
      * Sets the current contact instance if found
      * @return boolean false if not found
      */
-    public boolean findContact(String name){
+    public boolean findCard(String name){
         // search
         for (int contactId: library.keySet()) {
             if (library.get(contactId).getName().toLowerCase().equals(name.toLowerCase())){
