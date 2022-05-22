@@ -24,9 +24,9 @@ public class Cards
         library = new HashMap<Integer, Card>();     //initialise hashmap
         
         // Creating Contacts
-        Card c1 = new Card(1, "Charizard", 357.52, "charizard.png");
-        Card c2 = new Card(2, "Pikachu", 2.84, "pikachu.jpg");
-        Card c3 = new Card(3, "Weedle", 0.29, "weedle.jpg");
+        Card c1 = new Card(1, "Charizard", "357.52", "charizard.png");
+        Card c2 = new Card(2, "Pikachu", "2.84", "pikachu.jpg");
+        Card c3 = new Card(3, "Weedle", "0.29", "weedle.jpg");
         
         // Add contacts to collection 
         library.put(1, c1);
@@ -47,7 +47,7 @@ public class Cards
     /**
      * Add a card to the map
      */
-    public void addCard(String name, double value, String img)
+    public void addCard(String name, String value, String img)
     {
     library.put(currCardId, new Card
     (currCardId, name, value, img));

@@ -37,15 +37,15 @@ public class GUI
         String name = UI.askString("Name: ");
         nameErrorCheck(name);
         
-        double value = UI.askDouble("Value: ");
-        numberErrorCheck(value);
+        String value = UI.askString("Value: ");
+        valueErrorCheck(value);
         
         UI.println("Select a card image");
         String imgFileName = UIFileChooser.open("Choose an image file: ");
         
-        UI.println("Pokemon card added");
         cards.setCardId();
         cards.addCard(name, value, imgFileName);
+        UI.println("Pokemon " + card.getName() + " added");  
     }
     
     /**
@@ -68,8 +68,8 @@ public class GUI
     /**
      * Error checks value
      */
-    public void valueErrorCheck(double value){
-        if ((value>=0.01) && (value<=1000000)){
+    public void valueErrorCheck(String value){
+        if ((value.length()>=1) && (value.length()<=1000000)){
             if (Pattern.matches("^[0-9,.]+$", value)){
                 return;                
             }else{
