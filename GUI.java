@@ -37,16 +37,22 @@ public class GUI
         String name = UI.askString("Name: ");
         nameErrorCheck(name);
         
-        String value = UI.askString("Value: ");
+        double value = UI.askDouble("Value: ");
         valueErrorCheck(value);
         
+               
         UI.println("Select a card image");
         String imgFileName = UIFileChooser.open("Choose an image file: ");
         
         cards.setCardId();
         cards.addCard(name, value, imgFileName);
-        UI.println("Pokemon " + card.getName() + " added");  
+        UI.println("Pokemon added");  
     }
+    
+   
+        
+        
+    
     
     /**
      * Error checks name
@@ -68,15 +74,10 @@ public class GUI
     /**
      * Error checks value
      */
-    public void valueErrorCheck(String value){
-        if ((value.length()>=1) && (value.length()<=1000000)){
-            if (Pattern.matches("^[0-9,.]+$", value)){
-                return;                
-            }else{
-                    UI.println("Enter a valid value");
-                    addCard();
-                }    
-            }else {
+    public void valueErrorCheck(double value){
+        if ((value>=0.01) && (value<=9000000)){
+            
+        }else {
             UI.println("Enter a valid value");
             addCard();        
         }
@@ -90,7 +91,7 @@ public class GUI
      */
     public void findCard(){
         String cardName = UI.askString("Name of Pokemon: ");
-        if (cards.findCard(cardName.toLowerCase())) {
+        if (cards.findCard(cardName.toUpperCase())) {
             UI.println("Found Pokemon");
             UI.clearGraphics();
             card = cards.getCard();
